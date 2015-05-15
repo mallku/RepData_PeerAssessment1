@@ -83,7 +83,7 @@ Result is 570,608 steps
 2. Make a histogram of the total number of steps taken each day
 
 ```r
-hist(activity1$steps)
+hist(activity1$steps, main="Histogram of total no. of steps taken each day", xlab="number of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
@@ -116,7 +116,7 @@ Mean = 37.3826 and Median = 0
 library(plyr)
 activity1 <- mutate(activity1, hour=interval%/% 100, minute=interval%% 100)
 avSteps <- ddply(activity1, .(minute), summarize, average=mean(steps))
-plot(avSteps$minute, avSteps$average, type="l")
+plot(avSteps$minute, avSteps$average, type="l", main="Av. no. of steps (averaged across all days) taken by 5-minute interval", xlab="5-minute interval", ylab="average no. of steps taken")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-7-1.png) 
@@ -185,7 +185,7 @@ summary(activity2)
 
 
 ```r
-hist(activity2$steps)
+hist(activity2$steps, main="Histogram of total number of steps taken each day", xlab="number of steps")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 

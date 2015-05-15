@@ -51,7 +51,7 @@ Result is 570,608 steps
 
 2. Make a histogram of the total number of steps taken each day
 ```{r, echo=TRUE, fig.width=12}
-hist(activity1$steps)
+hist(activity1$steps, main="Histogram of total no. of steps taken each day", xlab="number of steps")
 ```
 
 3. Calculate and report the mean and median of the total number of steps taken per day
@@ -65,11 +65,11 @@ Mean = 37.3826 and Median = 0
 
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.width=12}
 library(plyr)
 activity1 <- mutate(activity1, hour=interval%/% 100, minute=interval%% 100)
 avSteps <- ddply(activity1, .(minute), summarize, average=mean(steps))
-plot(avSteps$minute, avSteps$average, type="l")
+plot(avSteps$minute, avSteps$average, type="l", main="Av. no. of steps (averaged across all days) taken by 5-minute interval", xlab="5-minute interval", ylab="average no. of steps taken")
 ```
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
@@ -105,8 +105,8 @@ summary(activity2)
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r, echo=TRUE}
-hist(activity2$steps)
+```{r, echo=TRUE, fig.width=12}
+hist(activity2$steps, main="Histogram of total number of steps taken each day", xlab="number of steps")
 
 mean(activity2$steps) # result 37.3826
 median(activity2$steps) # result 0
