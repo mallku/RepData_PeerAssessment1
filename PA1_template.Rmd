@@ -35,7 +35,7 @@ dim(activity1)
 
 Our copy dataset, activity1, is a dataframe of 15264 observations and will enable us to for example, calculate the mean number of steps per day. 
 
-## What is the mean number of steps taken per day?
+## What is the mean total number of steps taken per day?
 
 For this part of the assignment, you can ignore the missing values in the dataset.
 
@@ -79,7 +79,7 @@ avSteps[avSteps$average==max(avSteps$average),] # result is 15 minute interval
 ```
 Answer is the 15 minute interval
 
-## Inputing missing values
+## Imputing missing values
 
 Note that there are a number of days/intervals where there are missing values (coded as NA). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
